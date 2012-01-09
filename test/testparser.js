@@ -333,7 +333,7 @@ function ParserTestSuite(callback){
 		["(function(){ return\nfoo; })()", "3 asi"],
 		["var x; { 1 \n 2 } 3", "4 asi"],
 		["ab 	 /* hi */\ncd", "5 asi"],
-		["ab/*\n*/cd", "6 asi (multi line multilinecomment counts as eol)"],
+		["x = {get/*\n*/cd () {}}", "6 asi (multi line multilinecomment counts as eol)"],
 		["foo: while(1){ continue /* wtf \n busta */ foo; }", "7 asi illegal with multi line comment"],
 		["function f() { s }", "8 asi"],
 		["function f() { return }", "9 asi"],
